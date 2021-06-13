@@ -1,0 +1,11 @@
+Solution approach for fair-billing problem:
+
+- Read the file line by line and extract the  time, username and session status (start/end).
+- Fetch earliestTime and latestTime. These will be used later.
+- Maintain these extracted details in a map that holds session details of every user.
+- Parameters maintained for session details are: username, startTimes, endTimes, totalTime and totalSessions.
+- StartTimes and EndTimes are maintained as an array of time.Time object.
+- Iterate through StartTimes and EndTimes and subtract start time from end time to calculate session duration.
+- Add all session durations to find total session time for that user.
+- While calculating session durations, if no end time is found for a started session, use latest time as end time.
+  Similarly, if no start time is found for an ended session, use earliest time as end time.
